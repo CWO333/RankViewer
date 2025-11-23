@@ -113,13 +113,13 @@ void RankViewer::onLoad()
     friendsClose.Index = gameWrapper->GetFNameIndexByString("closeButton");
 
     // Puts in the unranked icon as a placeholder for the three images in case something goes wrong later on
-    auto testPath = gameWrapper->GetDataFolder() / "RankViewer" / "RankIcons" / "0.png";
+    auto testPath = gameWrapper->GetDataFolder() / "RankViewer" / "RankIcons" / "0.tga";
     currentRank = std::make_shared<ImageWrapper>(testPath, false, true);
 
-    testPath = gameWrapper->GetDataFolder() / "RankViewer" / "RankIcons" / "0.png";
+    testPath = gameWrapper->GetDataFolder() / "RankViewer" / "RankIcons" / "0.tga";
     nextRank = std::make_shared<ImageWrapper>(testPath, false, true);
 
-    testPath = gameWrapper->GetDataFolder() / "RankViewer" / "RankIcons" / "0.png";
+    testPath = gameWrapper->GetDataFolder() / "RankViewer" / "RankIcons" / "0.tga";
     beforeRank = std::make_shared<ImageWrapper>(testPath, false, true);
 
     // Screen resolution
@@ -185,7 +185,7 @@ void RankViewer::CheckMMR(int retryCount)
 
                     // Gets and loads the rank icon for your current rank from the RankViewer folder
                     string fileName;
-                    fileName = std::to_string(userTier) + ".png";
+                    fileName = std::to_string(userTier) + ".tga";
                     const auto currentPath = gameWrapper->GetDataFolder() / "RankViewer" / "RankIcons" / fileName;
                     currentRank = std::make_shared<ImageWrapper>(currentPath, false, true);
 
@@ -260,11 +260,11 @@ void RankViewer::CheckMMR(int retryCount)
                     }
 
                     // Gets correct rank icons from folder for before and after ranks
-                    fileName = std::to_string(lowerTier) + ".png";
+                    fileName = std::to_string(lowerTier) + ".tga";
                     const auto beforePath = gameWrapper->GetDataFolder() / "RankViewer" / "RankIcons" / fileName;
                     beforeRank = std::make_shared<ImageWrapper>(beforePath, false, true);
 
-                    fileName = std::to_string(upperTier) + ".png";
+                    fileName = std::to_string(upperTier) + ".tga";
                     const auto nextPath = gameWrapper->GetDataFolder() / "RankViewer" / "RankIcons" / fileName;
                     nextRank = std::make_shared<ImageWrapper>(nextPath, false, true);
 
